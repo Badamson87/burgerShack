@@ -1,0 +1,14 @@
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\bin\Debug\netcoreapp2.2\burgerShack.deps.json
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\bin\Debug\netcoreapp2.2\burgerShack.runtimeconfig.json
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\bin\Debug\netcoreapp2.2\burgerShack.runtimeconfig.dev.json
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\bin\Debug\netcoreapp2.2\burgerShack.dll
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\bin\Debug\netcoreapp2.2\burgerShack.pdb
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.csprojAssemblyReference.cache
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.csproj.CoreCompileInputs.cache
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.RazorAssemblyInfo.cache
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.RazorAssemblyInfo.cs
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.AssemblyInfoInputs.cache
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.AssemblyInfo.cs
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.RazorTargetAssemblyInfo.cache
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.dll
+C:\Users\Brian\source\codeworks\projects\csharp\burgerShack\obj\Debug\netcoreapp2.2\burgerShack.pdb
