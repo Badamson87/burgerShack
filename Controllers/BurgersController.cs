@@ -53,29 +53,23 @@ namespace burgerShack.Controllers
     //post api burgers
 
     [HttpPost]
-    public ActionResult<List<Burger>> Post([FromBody] Burger burger)
+    public ActionResult<Burger> Post([FromBody] Burger burger)
     {
-      Burgers.Add(burger);
-      return Burgers;
+      return Created("/api/burgers", _burgerRepo.AddBurger(burger));
     }
 
 
     // PUT api/burgers/id
 
     [HttpPut("{id}")]
-    public ActionResult<List<Burger>> Put(int id, [FromBody] Burger burger)
+    public ActionResult<Burger> Put(int id, [FromBody] Burger burger)
     {
-      try
+      Burger result = _burgerRepo.EditBurger(id, burger);
+      if (result != null)
       {
-        Burgers[id] = burger;
-        return Burgers;
+        return result;
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex);
-        return NotFound("{\"Error\": \"NO SUCH BURGER\"}");
-
-      }
+      return NotFound();
     }
 
 
@@ -83,18 +77,14 @@ namespace burgerShack.Controllers
     // Delete api/Burger
 
     [HttpDelete("{id}")]
-    public ActionResult<List<Burger>> Delete(int id)
+    public ActionResult<Burger> Delete(int id)
     {
-      try
+      if (_burgerRepo.DeleteBurger(id))
       {
-        Burgers.Remove(Burgers[id]);
-        return Burgers;
+        return Ok("success");
       }
-      catch (Exception ex)
       {
-        Console.WriteLine(ex);
-        return NotFound("{\"Error\": \"NO SUCH BURGER\"}");
-
+        return NotFound("No burger to delete")
       }
     }
 

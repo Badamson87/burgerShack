@@ -15,7 +15,7 @@ namespace burgerShack.Repositories
     }
 
 
-    public Burger GetBurgerById(int Id)
+    public Burger GetBurgerById(int id)
     {
       try
       {
