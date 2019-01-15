@@ -5,6 +5,7 @@ using burgerShack.Models;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using burgerShack.Repositories;
 
 namespace burgerShack.Controllers
 {
@@ -12,20 +13,26 @@ namespace burgerShack.Controllers
   [ApiController]
   public class BurgersController : ControllerBase
   {
-    public List<Burger> Burgers = new List<Burger>()
+    private readonly BurgerRepository _burgerRepo;
+
+    public IEnumerable<Burger> Burgers { get; private set; }
+
+    public BurgersController(BurgerRepository burgerRepo)
     {
-      new Burger("Mark Burger", "A delicous burger made by mark", 7.50f),
-      new Burger("brian burger", "its made from elk", 9.99f),
-      new Burger("porter-house", "this was a well done joke/pbj", 4.95f)
-    };
+      _burgerRepo = _burgerRepo;
+    }
 
 
-    //Get api/burgers
+
+
+
+
+    //Get api/burgers 
 
     [HttpGet]
     public IEnumerable<Burger> Get()
     {
-      return Burgers;
+      return _burgerRepo.Getall();
     }
 
 
@@ -34,15 +41,12 @@ namespace burgerShack.Controllers
     [HttpGet("{id}")]
     public ActionResult<Burger> GetAction(int id)
     {
-      try
+      Burger result = _burgerRepo.GetBurgerById(id);
+      if (result != null)
       {
-        return Burgers[id];
+        return Ok(result);
       }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex);
-        return NotFound("{\"error\": \"NO SUCH BURGER\"}");
-      }
+      return NotFound();
     }
 
 
