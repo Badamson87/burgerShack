@@ -19,7 +19,7 @@ namespace burgerShack.Controllers
 
     public BurgersController(BurgerRepository burgerRepo)
     {
-      _burgerRepo = _burgerRepo;
+      _burgerRepo = burgerRepo;
     }
 
 
@@ -83,9 +83,7 @@ namespace burgerShack.Controllers
       {
         return Ok("success");
       }
-      {
-        return NotFound("No burger to delete")
-      }
+      return NotFound("No burger to delete")
     }
 
 

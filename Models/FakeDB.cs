@@ -6,7 +6,7 @@ namespace burgerShack.Db
 {
   static class FakeDb
   {
-    public List<Drink> Drinks = new List<Drink>()
+    public static List<Drink> Drinks = new List<Drink>()
     {
       new Drink("Pepsi", "I could really go for one right now", 1.50f),
       new Drink("rootBeer", "An old school fav", 1.25f),
@@ -14,7 +14,7 @@ namespace burgerShack.Db
     };
 
 
-    public List<Side> Sides = new List<Side>()
+    public static List<Side> Sides = new List<Side>()
     {
       new Side("Potato Salad", "Better then all the other sides", 3.25f),
       new Side("Coleslaw", "Ohh getting hungry now", 2.50f),
