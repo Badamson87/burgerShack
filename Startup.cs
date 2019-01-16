@@ -16,9 +16,13 @@ namespace burgerShack
 {
   public class Startup
   {
+
+    private readonly string _connectionString = "";
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
+      _connectionString = configuration.GetSection("DB").GetValue<string>("mySQLConnectionSTring");
+
     }
 
     public IConfiguration Configuration { get; }
@@ -30,7 +34,18 @@ namespace burgerShack
       services.AddTransient<BurgerRepository>();
       services.AddTransient<DrinkRepository>();
       services.AddTransient<SideRepository>();
+      services.AddTransient<IDbConnection>(x => CreateDBContext());
     }
+
+    // Creates connection to database and returns the connection
+
+    private IDbConnection CreateDBContext()
+    {
+      var connection = new MySqlConnection(_connectionString);
+      connection.Open();
+      return connection;
+    }
+
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
