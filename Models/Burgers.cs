@@ -5,6 +5,10 @@ namespace burgerShack.Models
 
   public class Burger
   {
+
+    [Required]
+    public int Id { get; set; }
+
     [Required]
     public string Name { get; set; }
 
@@ -14,12 +18,12 @@ namespace burgerShack.Models
     [Range(5, float.MaxValue)]
     public float Price { get; set; }
 
-    public Burger(string name, string desc, float price)
-    {
-      Name = name;
-      Description = desc;
-      Price = price;
-    }
+    // public Burger(string name, string desc, float price)
+    // {
+    //   Name = name;
+    //   Description = desc;
+    //   Price = price;
+    // }
 
   }
 }

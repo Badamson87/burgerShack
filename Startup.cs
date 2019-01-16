@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using burgerShack.Repositories;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MySql.Data.MySqlClient;
 
 namespace burgerShack
 {
@@ -32,8 +34,8 @@ namespace burgerShack
     {
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
       services.AddTransient<BurgerRepository>();
-      services.AddTransient<DrinkRepository>();
-      services.AddTransient<SideRepository>();
+      // services.AddTransient<DrinkRepository>();
+      // services.AddTransient<SideRepository>();
       services.AddTransient<IDbConnection>(x => CreateDBContext());
     }
 
