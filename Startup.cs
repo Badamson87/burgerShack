@@ -35,7 +35,7 @@ namespace burgerShack
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
       services.AddTransient<BurgerRepository>();
       services.AddTransient<DrinkRepository>();
-      // services.AddTransient<SideRepository>();
+      services.AddTransient<CustomerRepository>();
       services.AddTransient<IDbConnection>(x => CreateDBContext());
     }
 
