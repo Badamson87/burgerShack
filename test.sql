@@ -13,14 +13,13 @@ CREATE TABLE customerFavorite(
  INDEX ( customerId, burgerId),
 
  FOREIGN KEY (customerID)
-  REFERENCES customer(id)
+  REFERENCES Customer(id)
     ON DELETE CASCADE,
 
     FOREIGN KEY (burgerId)
-      REFERENCES burger(id)
-        ON DELETE CASCADE,
+      REFERENCES Burger(id)
+        ON DELETE CASCADE
 );
 
 
 
--- Drop Table Burgers;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using burgerShack.Repositories;
 
-namespace burgerShack.Controllersustomer
+namespace burgerShack.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
